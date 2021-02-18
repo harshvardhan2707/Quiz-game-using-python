@@ -242,7 +242,7 @@ def SnakeGame(Topic):
     After you score the required points, the game window will shut and you will have the option to either quit the game 
     or go back to continuing the quiz.''',fg="red",pady=5,font=("Helevetica",17)).pack()
     z=tk.StringVar()
-    tk.Radiobutton(root,text="Start game",variable=z,fg="blue",font=("Helevetica",17),pady=16,value="Start game",command=lambda:StartSnake(Topic)).pack()
+    tk.Button(root,text="Start game",fg="blue",font=("Helevetica",17),pady=16,command=lambda:StartSnake(Topic)).pack()
     MenuEnd()
 def StartSnake(Topic):
     global Spaceinvlifeline
@@ -263,7 +263,7 @@ def StartSnake(Topic):
         z=tk.StringVar()
         tk.Label(root,text='''Congratulations, you've won the Snake game.
         Your lifeline is now valid. Now you can get back to the quiz.''',fg="red",pady=5,font=("Helevetica",17)).pack()
-        tk.Radiobutton(root,text="You won, return to quiz",variable=z,fg="blue",font=("Helevetica",17),pady=30,value="Return to quiz",command=lambda:callMain(Topic)).pack()
+        tk.Button(root,text="You won, return to quiz",fg="blue",font=("Helevetica",17),pady=30,command=lambda:callMain(Topic)).pack()
         MenuEnd()
         game.pygame.quit()
         game.pygame.init()
@@ -290,7 +290,7 @@ def SpaceInvds(Topic):
     After you score the required points, the game window will shut and you will have the option to either 
     quit the game or go back to continuing the quiz.''',fg="red",pady=5,font=("Helevetica",17)).pack()
     z=tk.StringVar()
-    tk.Radiobutton(root,text="Start game",variable=z,fg="blue",font=("Helevetica",17),pady=16,value="Start game",command=lambda:StartSpaceInvds(Topic)).pack()
+    tk.Button(root,text="Start game",fg="blue",font=("Helevetica",17),pady=16,command=lambda:StartSpaceInvds(Topic)).pack()
     MenuEnd()
 
 def StartSpaceInvds(Topic):
@@ -322,7 +322,7 @@ def StartSpaceInvds(Topic):
         z=tk.StringVar()
         tk.Label(root,text='''Congratulations, you've completed the Space Invaders game. 
         Your lifeline is now valid. Now you can get back to the quiz.''',fg="red",pady=5,font=("Helevetica",17)).pack()
-        tk.Radiobutton(root,text="You won, return to quiz",variable=z,fg="blue",font=("Helevetica",17),pady=30,value="Return to quiz",command=lambda:callMain(Topic)).pack()
+        tk.Button(root,text="You won, return to quiz",fg="blue",font=("Helevetica",17),pady=30,command=lambda:callMain(Topic)).pack()
         MenuEnd()
         Main.pygame.quit()
         Main.pygame.init()
@@ -364,9 +364,9 @@ def CorrectAns(A,value,Topic,n):
             tk.Label(root,text='''Choose one of the following to continue...''',fg="red",font=("Helevetica",15)).pack()
             z=tk.StringVar()
             if(Spaceinvlifeline[0]==0):
-                tk.Radiobutton(root,text="Space Invaders",variable=z,fg="blue",font=("Helevetica",17),pady=30,value="Space Invaders",command=lambda:SpaceInvds(Topic)).pack()
+                tk.Button(root,text="Space Invaders",fg="blue",font=("Helevetica",17),pady=30,command=lambda:SpaceInvds(Topic)).pack()
             if(Spaceinvlifeline[1]==0):
-                tk.Radiobutton(root,text="Snake",variable=z,fg="blue",font=("Helevetica",17),pady=16,value="Snake",command=lambda:SnakeGame(Topic)).pack()
+                tk.Button(root,text="Snake",fg="blue",font=("Helevetica",17),pady=16,command=lambda:SnakeGame(Topic)).pack()
             pygame.mixer.music.load("WrongAnswer.mp3")
             pygame.mixer.music.play()
         else:
