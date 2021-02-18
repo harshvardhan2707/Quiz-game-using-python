@@ -335,7 +335,7 @@ def CorrectAns(A,value,Topic,n):
         global NoOfAttemptedQuestions
         score=score+1
         For()
-        x="Right_Answer.mp3"
+        x="Audio\\Right_Answer.mp3"
         if(NoOfAttemptedQuestions<n and NoOfAttemptedQuestions<10):
             if(NoOfAttemptedQuestions<3):
                 y=random.choice([x,ListofQues[NoOfAttemptedQuestions]])
