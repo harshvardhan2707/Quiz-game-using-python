@@ -15,7 +15,7 @@ dis_height = 400
  
 dis = pygame.display.set_mode((dis_width, dis_height))
 pygame.display.set_caption('Snake Game')
-pygame.mixer.music.load("C:\\Users\\lenovo\\OneDrive\\Desktop\\CSE Project\\Space_Invaders\\background.wav")
+pygame.mixer.music.load("SpaceInvaders\\background.wav")
 pygame.mixer.music.play(-1)
  
 clock = pygame.time.Clock()
