@@ -9,7 +9,7 @@ Spaceinvlifeline=[0,0]
 Attemptedques=[]
 score=0
 NoOfAttemptedQuestions=0
-ListofQues=["C:\\Users\\lenovo\\OneDrive\\Desktop\\CSE Project\\Question1.mp3","C:\\Users\\lenovo\\OneDrive\\Desktop\\CSE Project\\Question2.mp3","C:\\Users\\lenovo\\OneDrive\\Desktop\\CSE Project\\Question3.mp3","C:\\Users\\lenovo\\OneDrive\\Desktop\\CSE Project\\Question4.mp3","C:\\Users\\lenovo\\OneDrive\\Desktop\\CSE Project\\Question4(1).mp3","C:\\Users\\lenovo\\OneDrive\\Desktop\\CSE Project\\Question5.mp3","C:\\Users\\lenovo\\OneDrive\\Desktop\\CSE Project\\Question6.mp3","C:\\Users\\lenovo\\OneDrive\\Desktop\\CSE Project\\Question7.mp3","C:\\Users\\lenovo\\OneDrive\\Desktop\\CSE Project\\Question8.mp3","C:\\Users\\lenovo\\OneDrive\\Desktop\\CSE Project\\Question9.mp3","C:\\Users\\lenovo\\OneDrive\\Desktop\\CSE Project\\Question10.mp3"]
+ListofQues=["Question1.mp3","Question2.mp3","Question3.mp3","Question4.mp3","Question4(1).mp3","Question5.mp3","Question6.mp3","Question7.mp3","Question8.mp3","Question9.mp3","Question10.mp3"]
 a=list(Questions.A.keys())
 pygame.init()
 
@@ -197,7 +197,7 @@ def For():
 def restart():
     root.destroy()
     pygame.quit()
-    os.system('python "C:\\Users\\lenovo\\OneDrive\\Desktop\\CSE Project\\Tkinterquiz.py"')
+    os.system('python "TheQuiz Mania.py"')
 
 
 def main():
@@ -277,7 +277,7 @@ def MainQuiz():
         tk.Radiobutton(root,text=x,variable=r,value=x,fg="blue",font=("Helevetica",17),pady=10,command=lambda:callMain(r.get())).pack()
         m+=1
     MenuEnd()
-    m=random.choice(["C:\\Users\\lenovo\\OneDrive\\Desktop\\CSE Project\\Starting.mp3","C:\\Users\\lenovo\\OneDrive\\Desktop\\CSE Project\\LetsPlay.mp3","C:\\Users\\lenovo\\OneDrive\\Desktop\\CSE Project\\Beginning.mp3"])
+    m=random.choice(["Starting.mp3","LetsPlay.mp3","Beginning.mp3"])
     pygame.mixer.music.load(m)
     pygame.mixer.music.play()
     tk.mainloop() 
@@ -335,7 +335,7 @@ def CorrectAns(A,value,Topic,n):
         global NoOfAttemptedQuestions
         score=score+1
         For()
-        x="C:\\Users\\lenovo\\OneDrive\\Desktop\\CSE Project\\Right_Answer.mp3"
+        x="Right_Answer.mp3"
         if(NoOfAttemptedQuestions<n and NoOfAttemptedQuestions<10):
             if(NoOfAttemptedQuestions<3):
                 y=random.choice([x,ListofQues[NoOfAttemptedQuestions]])
@@ -367,7 +367,7 @@ def CorrectAns(A,value,Topic,n):
                 tk.Radiobutton(root,text="Space Invaders",variable=z,fg="blue",font=("Helevetica",17),pady=30,value="Space Invaders",command=lambda:SpaceInvds(Topic)).pack()
             if(Spaceinvlifeline[1]==0):
                 tk.Radiobutton(root,text="Snake",variable=z,fg="blue",font=("Helevetica",17),pady=16,value="Snake",command=lambda:SnakeGame(Topic)).pack()
-            pygame.mixer.music.load("C:\\Users\\lenovo\\OneDrive\\Desktop\\CSE Project\\WrongAnswer.mp3")
+            pygame.mixer.music.load("WrongAnswer.mp3")
             pygame.mixer.music.play()
         else:
             tk.Label(root,text="Sorry you failed, better luck next time :)",fg="red",pady=5,font=("Helevetica",17)).pack()
@@ -398,7 +398,7 @@ def callMain(value):
         global NoOfAttemptedQuestions
         if(NoOfAttemptedQuestions==0):
             NoOfAttemptedQuestions+=1
-            pygame.mixer.music.load("C:\\Users\\lenovo\\OneDrive\\Desktop\\CSE Project\\Question1.mp3")
+            pygame.mixer.music.load("Question1.mp3")
             pygame.mixer.music.play()
 
 
